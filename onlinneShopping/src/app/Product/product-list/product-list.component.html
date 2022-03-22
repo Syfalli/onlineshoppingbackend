@@ -1,0 +1,32 @@
+
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Product Price</th>  
+                <th>Category</th>
+                
+                 
+            </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let p of productList;">              
+                <td> {{p.prdId}} </td>
+                <td> {{p.prdName}} </td>
+                <td> {{p.prdPrice}} </td>
+                <td> {{p.category}} </td>
+                                      
+               
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="upload">
+<form  onsubmit="setTimeout(function () { window.location.reload(); }, 10)">
+    <input type="file" id="myFile" name="filename">
+    <input  type="button" class="btn btn-outline-dark" type="submit">
+   
+  </form>
+</div>

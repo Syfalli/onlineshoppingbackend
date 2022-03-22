@@ -1,0 +1,13 @@
+
+
+<div  class="box">
+    <h1>ADMIN</h1>
+    <br>
+      <input type="text"  [(ngModel)]="aId" size="10" placeholder="Username"/>
+      <input type="text" [(ngModel)]="aPassword" size="10" placeholder="Password"/>
+      <br>
+      <button type="button" class="btn btn-outline-dark" (click)="onSearch()" value="Login" >LOGIN</button> &nbsp; &nbsp;
+     
+      <div *ngIf="notFound">User not found</div>
+  </div> 
+  

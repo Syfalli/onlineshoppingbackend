@@ -1,0 +1,28 @@
+<p>admin-list works!</p>
+
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Admin Id</th>
+                <th>Admin Name</th>
+                <th>Admin UId</th>  
+                <th>Password</th>  
+                <th>Contact</th>  
+                <th>Email</th>  
+                 
+            </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let a of adminList;">              
+                <td> {{a.aId}} </td>
+                <td> {{a.aName}} </td>
+                <td> {{a.aUid}} </td>      
+                <td> {{a.aPassword}} </td> 
+                <td> {{a.aContact}} </td> 
+                <td> {{a.aEmail}} </td>                  
+               
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,44 @@
+<p>add-cart works!</p>
+
+<br/><br/>
+<div class="col-md-6 col-md-offset-2">
+  <h2>Add Cart</h2>
+  <br/>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="cartId">Cart Id:</label>
+      <input formControlName="cartId" placeholder="cart Id" name="cartId" class="form-control" id="cartId">
+      <div *ngIf="submitted && addForm.controls.cartId.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.cartId.errors.required">cartId is required</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="loginId">Login Id:</label>
+      <input formControlName="loginId" placeholder="login Id" name="loginId" class="form-control" id="loginId">
+      <div *ngIf="submitted && addForm.controls.loginId.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.loginId.errors.required">loginId is required</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="prdId">Product Id:</label>
+      <input type="prdId" formControlName="prdId" placeholder="prdId" name="prdId" class="form-control" id="prdId">
+      <div *ngIf="submitted && addForm.controls.prdId.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.prdId.errors.required">prdId is required</div>
+        </div>
+    </div>
+    <br><br>
+    
+    <button class="btn btn-success">Save</button>&nbsp; &nbsp;
+    <button class="btn btn-danger" type="reset">Cancel</button>
+&nbsp; &nbsp;
+    <a class="btn btn-warning" href="/list-user">Back to List</a> 
+
+    <br/><br/>
+  </form>
+</div>
+
+
+

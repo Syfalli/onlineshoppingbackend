@@ -1,0 +1,74 @@
+
+ <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+<div class="wrapper">
+  <div class="title">
+    Registration Form
+  </div>
+  <div class="form">
+     <div class="inputfield">
+        <label for="fName"> <b> First Name</b></label>
+        <input formControlName="fName" placeholder="First Name" name="fName" type="text" class="input">
+        <div *ngIf="submitted && addForm.controls.fName.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.fName.errors.required">First Name is required</div>
+        </div>
+     </div>  
+
+
+    <div class="inputfield">
+        <label for="lName"><b>Last Name</b></label>
+        <input type="lName" formControlName="lName" placeholder="Last Name" name="lName"class="input">
+        <div *ngIf="submitted && addForm.controls.lName.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.lName.errors.required">Last Name is required</div>
+        
+    </div>
+     </div>
+     
+     
+     <div class="inputfield">
+        <label for="email"><b>Email</b></label>
+        <input type="email" formControlName="email" placeholder="Email" name="email" class="input">
+        <div *ngIf="submitted && addForm.controls.email.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.email.errors.required">Email is required</div>
+        </div>
+     </div>  
+
+
+    <div class="inputfield">
+        <label for="contact"><b>Contact</b></label>
+        <input type="contact" formControlName="contact" placeholder="contact" name="contact" class="input">
+        <div *ngIf="submitted && addForm.controls.contact.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.contact.errors.required">contact is required</div>
+        </div>
+     </div> 
+     
+      <div class="inputfield">
+        <label for="password"><b>Password</b></label>
+        <input  type="password" formControlName="password" placeholder="password" name="password"  type="text" class="input">
+        <div *ngIf="submitted && addForm.controls.password.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.password.errors.required">password is required</div>
+        </div>
+     </div> 
+    <div class="inputfield">
+        <label for="address"> <b> Address</b></label>
+        <textarea type="address" formControlName="address" placeholder="address" name="address" class="textarea"></textarea>
+        <div *ngIf="submitted && addForm.controls.address.errors" class="error">
+          <div class="text-danger" *ngIf="addForm.controls.address.errors.required">address is required</div>
+        </div>
+      </div> 
+   
+    <div class="inputfield terms">
+        <label class="check">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <p>Agreed to terms and conditions</p>
+     </div> 
+    <div class="inputfield">
+      
+      <input type="submit" value="Register" class="btn">
+      
+    </div>
+  </div>
+</div>
+</form>
+
