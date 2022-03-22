@@ -44,10 +44,7 @@ public class LoginController {
 		loginService.addNewUser(login);
 	 }
 	
-	@PostMapping("/newLogin")
-	public LoginStatus newLogin(@RequestBody Login login) {
-		
-	}
+
 	
 	
 	

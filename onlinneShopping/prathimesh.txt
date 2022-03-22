@@ -1,0 +1,418 @@
+verify.html
+
+
+
+<!-- 
+
+<form  class="box" action="onSearch()" >
+  <h1>Login</h1>
+  <input type="text" [(ngModel)]="loginId" size="10" placeholder="Username">
+  <input type="text" [(ngModel)]="password"  size="10" placeholder="Password">
+  <input  value="Login">
+   <input type="text" [(ngModel)]="loginId" size="10"/>
+    <br>
+    <input type="text" [(ngModel)]="password" size="10"/>
+    <button (click)="onSearch()">Search</button>   
+    <div *ngIf="notFound">User not found</div>
+  <button >Search</button>  
+  
+</form>
+ -->
+
+
+<!-- 
+<div  class="box">
+  <h1>Login</h1>
+  <br>
+    <input type="text"  [(ngModel)]="loginId" size="10" placeholder="Username"/>
+    <input type="text" [(ngModel)]="password" size="10" placeholder="Password"/>
+    <br>
+    <button type="button" class="btn btn-outline-dark" (click)="onSearch()" value="Login" >LOGIN</button> &nbsp; &nbsp;
+    <button type="button" class="btn btn-outline-dark" (click)="onSearch1()" value="Login" >SignUp</button>  
+    <div *ngIf="notFound">User not found</div>
+</div>  -->
+
+
+<div class="container form-box"  style="width: 70%;margin-bottom: 100px; margin-top: 100px;">
+  <div style="text-align:center;">
+    <h3>Login</h3>
+  </div>
+  <form (ngSubmit)="loginCheck()">
+    <!-- email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" required #email="ngModel" id="email" name="email" [(ngModel)]="login.email">
+      <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          username is required
+        </div> 
+      </div> -->
+    </div>
+
+    <!-- password -->
+    <div class="form-group">
+      <label for="pwd">Password</label>
+      <input type="password" class="form-control" #password="ngModel" required id="password" name="password" [(ngModel)]="login.password">
+      <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+        <div *ngIf="password.errors.required">
+          password is required.
+        </div>
+      </div> -->
+    </div>
+
+
+    <!-- <div class="checkbox">
+      <label><input type="checkbox" name="rememberMe" [(ngModel)]="rememberMe"> Remember me</label>
+    </div> -->
+    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="SignUp" class="btn btn-danger m-3">SignUp</button>
+  </form>
+    <!-- <div class="container" >
+      <a style="text-decoration: none;" routerLink="/register">New to webrash? Create an account</a>
+    </div> -->
+    <div class="container" style="text-align: right; margin-top:30px;">
+      <!-- <a style="text-decoration: none; " routerLink="/forgot-password">Forgot Password?</a> -->
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <nav>
+  <img src="assets/images/logo2.jpg" class="logo">
+  <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a routerLink="/verifyuser">Login </a></li>
+      <li><a href="#">SERVICES</a></li>
+      <li><a href="#">HIRE ME</a></li>
+  </ul>
+</nav>
+<p>verify User!</p>
+<br/><br/>
+  <div class="col-md-6 col-md-offset-2">
+    <h3>Login</h3>
+       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="loginId">User Name:</label>
+        <input type="loginId" class="form-control" formControlName="loginId" id="loginId">
+        <div *ngIf="submitted && loginForm.controls.loginId.errors" class="error">
+          <div class="text-danger" *ngIf="loginForm.controls.loginId.errors.required">User is required</div>
+        </div>
+      
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" formControlName="password" id="pwd">
+        <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+          <div class="text-danger" *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+        </div>
+       
+      </div>
+      <br>
+      <button class="btn btn-success">Login</button> &nbsp; &nbsp;
+      <button class="btn btn-danger" type="reset">Cancel</button>
+      <br/><br/>
+      <div *ngIf="invalidLogin" class="error">
+        <div class="text-danger">Invalid User Name or Password.</div>
+      </div>
+    </form>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+verify.css
+
+
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+}
+.box{
+  width: 400px;
+  padding: 40px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:rgba(255,255,255,0.3);
+  text-align: center;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+
+  transition: all 0.2s ease-in-out;
+}
+.box h1{
+  color: rgb(29, 9, 9);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type = "text"],.box input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #09161f;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: rgb(14, 7, 7);
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+  width: 280px;
+  border-color: #1a3947;
+}
+.box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #4292dd;
+  padding: 14px 40px;
+  outline: none;
+  color: rgb(12, 29, 32);
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+  background: #d7dfd7;
+}
+
+
+
+
+
+verify .spec.ts
+
+
+
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { VerifyComponent } from './verify.component';
+
+describe('VerifyComponent', () => {
+  let component: VerifyComponent;
+  let fixture: ComponentFixture<VerifyComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ VerifyComponent ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(VerifyComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+
+
+
+
+
+
+verify.ts
+
+
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators,ReactiveFormsModule  } from '@angular/forms';
+
+import { Router } from '@angular/router';
+import { Login } from 'src/app/appmodel/login';
+// import { Login } from '../Login';
+import { LoginService } from '../login.service';
+
+@Component({
+  selector: 'app-verify',
+  templateUrl: './verify.component.html',
+  styleUrls: ['./verify.component.css']
+})
+export class VerifyComponent implements OnInit {
+
+  // userObj: Login = new Login();
+  loginId: any; 
+  email:string="";
+  notFound: boolean = false;
+  no: number=0;
+ password:string="";
+  pass:string="";
+  login: Login = new Login();
+  
+
+  constructor(private customerService: LoginService, private router: Router) { }
+
+  ngOnInit(): void {
+
+  }
+  onSearch1()
+  {
+    this.router.navigate(['/adduser'])
+
+  }
+  // onSearch() {
+  //   console.log("inside search" + this.loginId);
+   
+  //   console.log("inside search" + this.password);
+  //   this.LoginService.getUserById(this.loginId).
+  //     subscribe(data => { // {1,sdsdc,adsfdsf,pass,515}
+  //       this.userObj = data;
+  //       this.pass=data.password;
+  //       if (this.password===this.pass) {
+  //         this.notFound = true;
+  //         this.router.navigate(['/producthome'])
+  //       }
+  //       {
+  //         this.notFound = false;
+  //       }
+  //       console.log("inside search" + this.pass);
+  //     },
+  //       (error) => {
+  //         console.log('cart not found');
+  //         this.notFound = true;
+  //       })
+
+  // }
+
+
+
+  loginCheck() {
+    console.log(this.login);
+    this.customerService.login(this.login).subscribe(response => {
+      //alert(JSON.stringify(response));
+
+      // sessionStorage.setItem("customerName", response['name'])
+      // console.log(response);
+      // sessionStorage.setItem('registeredCartId', response['cartId']);
+      if (response.status == true) {
+        // let customerId = response.id;
+        // sessionStorage.setItem('customerId', String(customerId));
+        alert('welcome to our website')
+        this.router.navigate(['producthome']);
+      } else
+       alert('error in login')
+      // setInterval(function () { location.reload(); }, 1500);
+
+    })
+
+
+
+  }
+
+
+
+
+
+ /*
+  loginForm : any;
+  submitted: boolean = false;
+  invalidLogin: boolean = false;
+  password:any;
+  data:any;
+  constructor(private formBuilder: FormBuilder, private router: Router,private vservice:LoginService) { }
+
+  onSubmit(){
+
+    this.vservice.getPassById(this.loginForm.controls.loginId.value).
+    subscribe(data => {
+        this.password = data;
+        this.router.navigate(['product']);},
+        (error) => {
+          console.log('cart not found');
+          this.invalidLogin = true;
+         // this.router.navigate(['product'])
+        })
+    
+   // this.vservice.getPassById(this.loginForm.controls.loginId.value).subscribe(data=>this.password=data);
+ console.log("USERNAME"+this.loginForm.controls.loginId.value);
+ console.log("PASSWORD"+this.password);
+    this.submitted = true;
+    if(this.loginForm.invalid){
+      return;
+    }
+    if(
+    this.loginForm.controls.password.value==this.password){
+      localStorage.setItem("username",this.loginForm.controls.loginId.value);
+       this.router.navigate(['product']);
+    }
+    else{
+      this.invalidLogin = true;
+    }
+  }
+  // onSubmit(){
+    
+  //   this.submitted = true;
+  //   if(this.loginForm.invalid){
+  //     return;
+  //   }
+  //   if(this.loginForm.controls.email.value =="user" &&
+  //   this.loginForm.controls.password.value=="123456"){
+  //     localStorage.setItem("username",this.loginForm.controls.email.value);
+  //     this.router.navigate(['product']);
+  //   }
+  //   else{
+  //     this.invalidLogin = true;
+  //   }
+  // }
+
+  ngOnInit() {    
+
+    this.loginForm = this.formBuilder.group({
+      loginId: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+
+  }
+  */
+}
+
+
+
+
+
+
+
+

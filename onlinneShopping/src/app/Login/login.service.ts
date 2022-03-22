@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Login } from 'src/app/appmodel/login';
+import { Login } from './Login';
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +18,6 @@ export class LoginService {
 
     return this.http.get<any[]>(this.baseUrl+'/loginlist');
   }
-
-  login(login: Login): Observable<any> {
-    let url = "http://localhost:8282/login";
-    return this.http.post(url, login);
-  }
-
-
 
 
   public getUserById(id:number)
