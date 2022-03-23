@@ -43,7 +43,7 @@
      
       <div class="inputfield">
         <label for="password"><b>Password</b></label>
-        <input  type="password" formControlName="password" placeholder="password" name="password"  type="text" class="input">
+        <input  type="password" formControlName="password" placeholder="password" name="password"  type="password" class="input">
         <div *ngIf="submitted && addForm.controls.password.errors" class="error">
           <div class="text-danger" *ngIf="addForm.controls.password.errors.required">password is required</div>
         </div>
