@@ -36,10 +36,10 @@ public class AdminController {
 		adminService.addNewAdmin(admin);
 	 }
 	
-	@DeleteMapping("retail/{id}")
-    public String deleteById(@PathVariable("id") int id) {
-	   adminService.deleteRecord(id);
-	   return id+"id is deleted";
-	
-	}
+//	@DeleteMapping("retail/{id}")
+//    public String deleteById(@PathVariable("id") int id) {
+//	   adminService.deleteRecord(id);
+//	   return id+"id is deleted";
+//	
+//	}
 }	
