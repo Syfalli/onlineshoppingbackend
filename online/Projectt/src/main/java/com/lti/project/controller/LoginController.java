@@ -45,9 +45,6 @@ public class LoginController {
 	 }
 	
 
-	
-	
-	
 	@GetMapping("/getpassword/{id}") 
 	public String getPasswordById(@PathVariable(value="id") int userId) {
 	 

@@ -18,7 +18,7 @@ export class CartListComponent implements OnInit {
   loadData()
   {
     this.cartSer.listAllcartList().subscribe(
-      (      data: Add_to_cart[])=>
+      (data: Add_to_cart[])=>
       {
         this.cartList=data;
         console.log("in cart-list  " +this.cartList )

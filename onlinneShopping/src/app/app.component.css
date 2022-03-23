@@ -375,7 +375,8 @@ span{
 
 
 nav ul li a:hover{
-  color: #00ffe7;
+  color: #000;
+  text-decoration: underline;
 }
 
 .detel{
