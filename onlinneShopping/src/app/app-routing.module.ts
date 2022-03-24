@@ -8,6 +8,7 @@ import { AddAdminComponent } from './Admin/add-admin/add-admin.component';
 import { AdminListComponent } from './Admin/admin-list/admin-list.component';
 import { FindAdminComponent } from './Admin/find-admin/find-admin.component';
 import { VerifyAdminComponent } from './Admin/verify-admin/verify-admin.component';
+//import { CarouselComponent } from './carousel/carousel.component';
 import { HomeComponent } from './home/home.component';
 import { AddLoginComponent } from './Login/add-login/add-login.component';
 import { FindLoginComponent } from './Login/find-login/find-login.component';
@@ -46,7 +47,7 @@ const routes: Routes = [
 
   {path:'order',component:OrderListComponent},
   {path:'searchorder',component:FindOrderComponent},
-
+ // { path: 'carousel', component: CarouselComponent},
   {path:'product',component:ProductListComponent},
   {path:'searchproduct',component:FindProductComponent},
   {path:'addproduct',component:AddProductComponent},

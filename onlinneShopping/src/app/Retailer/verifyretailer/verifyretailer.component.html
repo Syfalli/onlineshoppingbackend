@@ -3,10 +3,10 @@
     <h1>RETAILER</h1>
     <br>
       <input type="text"  [(ngModel)]="rId" size="10" placeholder="Username"/>
-      <input type="text" [(ngModel)]="rPassword" size="10" placeholder="Password"/>
+      <input type="password" [(ngModel)]="rPassword" size="10" placeholder="Password"/>
       <br>
       <button type="button" class="btn btn-outline-dark" (click)="onSearch()" value="Login" >LOGIN</button> &nbsp; &nbsp;
-      <button type="button" class="btn btn-outline-dark" (click)="onSearch1()" value="Login" >SignUp</button>  
-      <div *ngIf="notFound">User not found</div>
+      <button type="button" class="btn btn-outline-dark" (click)="onSearch1()" value="Login" >SignUp</button><br><br>
+      <div *ngIf="notFound">Ratailer Not Found</div>
   </div> 
   

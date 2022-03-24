@@ -1,9 +1,9 @@
 
  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="wrapper">
-      <div class="title">
+      <!-- <div class="title">
         Registration Form
-      </div>
+      </div> -->
       <div class="form">
          <div class="inputfield">
             <label for="rId"> <b> Retailer Id</b></label>
@@ -43,7 +43,7 @@
          
           <div class="inputfield">
             <label for="rPassword"><b>Password</b></label>
-            <input  formControlName="rPassword" placeholder="password" name="rPassword"  type="text" class="input">
+            <input  formControlName="rPassword" placeholder="password" name="rPassword"  type="password" class="input">
             <div *ngIf="submitted && addForm.controls.rPassword.errors" class="error">
               <div class="text-danger" *ngIf="addForm.controls.rPassword.errors.required">password is required</div>
             </div>
@@ -57,13 +57,13 @@
             </div>
          </div> 
        
-        <div class="inputfield terms">
+         <div class="inputfield terms">
             <label class="check">
               <input type="checkbox">
               <span class="checkmark"></span>
             </label>
             <p>Agreed to terms and conditions</p>
-         </div> 
+         </div>  
         <div class="inputfield">
           <input type="submit" value="Register" class="btn">
         </div>

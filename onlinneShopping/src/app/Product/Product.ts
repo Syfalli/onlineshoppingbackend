@@ -5,6 +5,7 @@ export class Product
     prdPrice:number=0;
     category:String="";
     rId:number=0;
+    
 
 
 }
